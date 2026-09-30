@@ -22,7 +22,7 @@ Open [http://localhost:3000](http://localhost:3000).
 
 ## Server rendering
 
-`src/app/page.tsx` is a Server Component. It fetches the catalog with `cache: "no-store"` and `export const dynamic = "force-dynamic"`, so the product HTML is built on the server for each request. Filters, sorting, search, and the wishlist run in the browser on that already-rendered list.
+`src/app/page.tsx` is a Server Component. It fetches the catalog with `cache: "no-store"` and `export const dynamic = "force-dynamic"`, so the product HTML is built on the server for each request.
 
 ## SEO
 
@@ -31,7 +31,3 @@ Open [http://localhost:3000](http://localhost:3000).
 - Product names as `h3`
 - JSON-LD `CollectionPage`, `ItemList`, and `Product` offers
 - Image file names such as `mens-cotton-jacket-3.png`, with descriptive alt text
-
-## Stack
-
-Next.js, React, and TypeScript. No UI kit and no CSS framework. Icons are inline SVG.
