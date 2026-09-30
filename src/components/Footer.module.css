@@ -1,0 +1,391 @@
+.footer {
+  background: #000;
+  color: #fff;
+  padding: 56px 0 28px;
+}
+
+.inner {
+  display: block;
+}
+
+.top,
+.columns {
+  display: grid;
+  grid-template-columns: 1.15fr 1fr 1fr;
+  column-gap: 40px;
+  align-items: start;
+}
+
+.news {
+  grid-column: 1 / 3;
+}
+
+.contact {
+  grid-column: 3;
+}
+
+.news h2,
+.contact h2,
+.column h2,
+.follow h2 {
+  margin: 0 0 14px;
+  font-size: 16px;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.newsMobile,
+.contactMobile,
+.contactDot {
+  display: none;
+}
+
+.news > p,
+.contact a,
+.currencyNote {
+  color: #cfcfcf;
+  font-size: 15px;
+  line-height: 1.5;
+}
+
+.news form {
+  display: flex;
+  gap: 16px;
+  max-width: 480px;
+  margin-top: 22px;
+}
+
+.news input {
+  flex: 1;
+  min-width: 0;
+  height: 48px;
+  padding: 0 16px;
+  border: 0;
+  border-radius: 2px;
+  background: #fff;
+  color: #222;
+}
+
+.news input::placeholder {
+  color: #9b9b9b;
+}
+
+.news button {
+  flex: none;
+  min-width: 148px;
+  height: 48px;
+  padding: 0 18px;
+  border: 1px solid #6d6d6d;
+  border-radius: 4px;
+  color: #b5b5b5;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  font-size: 13px;
+  font-weight: 500;
+}
+
+.news button:hover {
+  border-color: #fff;
+  color: #fff;
+}
+
+.footer :focus-visible {
+  outline-color: #fff;
+}
+
+.status {
+  margin: 10px 0 0;
+  font-size: 13px;
+  color: #d7d7d7;
+}
+
+.contact {
+  display: grid;
+  justify-items: start;
+  gap: 6px;
+}
+
+.contactLines {
+  display: grid;
+  justify-items: start;
+  gap: 6px;
+  margin: 0;
+}
+
+.contact a {
+  width: fit-content;
+}
+
+.currencyHeading {
+  margin-top: 28px;
+}
+
+.currency {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin: 4px 0 0;
+  font-size: 15px;
+  font-weight: 600;
+}
+
+.currencyNote {
+  max-width: 280px;
+  margin: 8px 0 0;
+  font-size: 12px;
+  line-height: 1.45;
+}
+
+.rule {
+  margin: 36px 0 32px;
+  border: 0;
+  border-top: 1px solid #3a3a3a;
+}
+
+.columns {
+  row-gap: 24px;
+}
+
+.column button,
+.follow button {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  color: inherit;
+  font: inherit;
+  letter-spacing: inherit;
+  text-transform: inherit;
+  text-align: left;
+}
+
+.plain button {
+  font-size: 20px;
+  font-weight: 700;
+  letter-spacing: 0;
+  text-transform: none;
+}
+
+.chevron {
+  display: none;
+}
+
+.column ul,
+.payments {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.column a {
+  display: inline-block;
+  padding: 5px 0;
+  color: #e4e4e4;
+  font-size: 15px;
+}
+
+.column a:hover {
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.social {
+  display: flex;
+  gap: 12px;
+  margin: 4px 0 28px;
+}
+
+.acceptsWrap {
+  margin-top: 0;
+}
+
+.social a {
+  display: grid;
+  place-items: center;
+  width: 36px;
+  height: 36px;
+  border: 1px solid #fff;
+  border-radius: 50%;
+}
+
+.social a:hover {
+  background: #fff;
+  color: #000;
+}
+
+.accepts {
+  margin: 0 0 14px;
+  font-size: 16px;
+  font-weight: 700;
+}
+
+.accepts span {
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.payments {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.payments li {
+  display: grid;
+  place-items: center;
+  width: 52px;
+  height: 32px;
+  padding: 4px;
+  border-radius: 4px;
+  background: #fff;
+  overflow: hidden;
+}
+
+.payments img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.payBlue {
+  padding: 3px;
+  background: #016fd0;
+}
+
+.payFill {
+  padding: 0;
+}
+
+.copy {
+  margin: 36px 0 0;
+  color: #bdbdbd;
+  font-size: 14px;
+  text-align: center;
+}
+
+@media (max-width: 900px) {
+  .news form {
+    max-width: none;
+  }
+}
+
+@media (max-width: 767px) {
+  .footer {
+    padding-top: 32px;
+  }
+
+  .newsDesktop,
+  .contactDesktop,
+  .currencyNote {
+    display: none;
+  }
+
+  .newsMobile,
+  .contactMobile {
+    display: block;
+  }
+
+  .news form {
+    gap: 10px;
+  }
+
+  .news input,
+  .news button {
+    height: 42px;
+  }
+
+  .news button {
+    min-width: 0;
+    padding: 0 12px;
+    font-size: 12px;
+    letter-spacing: 0.08em;
+  }
+
+  .top,
+  .columns {
+    grid-template-columns: 1fr;
+    gap: 0;
+  }
+
+  .news,
+  .contact {
+    grid-column: auto;
+  }
+
+  .contact {
+    margin-bottom: 8px;
+  }
+
+  .contactLines {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 8px;
+    font-size: 13px;
+  }
+
+  .contactDot {
+    display: inline;
+  }
+
+  .contact a {
+    font-size: 13px;
+  }
+
+  .chevron {
+    display: block;
+  }
+
+  .column ul {
+    display: none;
+  }
+
+  .columnOpen ul {
+    display: block;
+    padding-bottom: 12px;
+  }
+
+  .column {
+    border-bottom: 1px solid #2c2c2c;
+  }
+
+  .follow {
+    border-bottom: 0;
+  }
+
+  .follow h2 {
+    border-bottom: 1px solid #2c2c2c;
+  }
+
+  .acceptsWrap {
+    padding-top: 18px;
+  }
+
+  .column h2,
+  .follow h2 {
+    margin: 0;
+  }
+
+  .column button,
+  .follow button {
+    min-height: 52px;
+  }
+
+  .plain button {
+    font-size: 16px;
+  }
+
+  .followBody {
+    display: none;
+    padding-bottom: 16px;
+  }
+
+  .followOpen .followBody {
+    display: block;
+  }
+
+  .copy {
+    margin-top: 24px;
+  }
+}

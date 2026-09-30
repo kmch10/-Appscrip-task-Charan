@@ -1,0 +1,103 @@
+.panel {
+  padding-bottom: 24px;
+}
+
+.customizable {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 4px 0 18px;
+  border-bottom: 1px solid var(--line);
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.group {
+  border-bottom: 1px solid var(--line);
+}
+
+.group h3 {
+  margin: 0;
+  font-size: inherit;
+  font-weight: inherit;
+}
+
+.groupButton {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 12px;
+  width: 100%;
+  padding: 18px 0 16px;
+  text-align: left;
+}
+
+.groupLabel {
+  display: block;
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.summary {
+  display: block;
+  margin-top: 6px;
+  color: var(--muted);
+  font-size: 14px;
+  font-weight: 400;
+  letter-spacing: 0;
+  text-transform: none;
+}
+
+.chevronOpen {
+  transform: rotate(180deg);
+  margin-top: 2px;
+}
+
+.options {
+  display: grid;
+  gap: 12px;
+  margin: 0;
+  padding: 0 0 18px;
+  border: 0;
+}
+
+.options label {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 15px;
+}
+
+.customizable input,
+.options input {
+  appearance: none;
+  width: 16px;
+  height: 16px;
+  margin: 0;
+  border: 1px solid #111;
+  background: #fff;
+  display: grid;
+  place-items: center;
+  flex: none;
+}
+
+.customizable input:checked::after,
+.options input:checked::after {
+  content: "";
+  width: 9px;
+  height: 5px;
+  border-left: 1.5px solid #111;
+  border-bottom: 1.5px solid #111;
+  transform: translateY(-1px) rotate(-45deg);
+}
+
+.customizable input:focus-visible,
+.options input:focus-visible,
+.groupButton:focus-visible {
+  outline: 2px solid #111;
+  outline-offset: 3px;
+}

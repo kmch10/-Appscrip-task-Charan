@@ -1,36 +1,37 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Appscrip task — product listing page
 
-## Getting Started
+Responsive product listing page for the Appscrip frontend assignment. The page is server-rendered with Next.js, styled with handwritten CSS, and filled from the [Fake Store API](https://fakestoreapi.com/products).
 
-First, run the development server:
+## Run locally
 
 ```bash
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000).
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## What the page does
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+- Shows the collection with the filter sidebar open on desktop, hidden on request, and as a full-screen panel on a phone.
+- Filters by ideal fit, occasion, work, fabric, segment, season, raw material, pattern, and customizable.
+- Sorts by recommended, newest, popular, and price.
+- Searches by product name and description.
+- Saves items to a wishlist for the current visit.
+- Adapts the grid for desktop (3 columns with filters, 4 without), tablet, and phone (2 columns).
 
-## Learn More
+## Server rendering
 
-To learn more about Next.js, take a look at the following resources:
+`src/app/page.tsx` is a Server Component. It fetches the catalog with `cache: "no-store"` and `export const dynamic = "force-dynamic"`, so the product HTML is built on the server for each request. Filters, sorting, search, and the wishlist run in the browser on that already-rendered list.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## SEO
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+- Title and meta description
+- One `h1` (`Discover our products`) and `h2` headings for the result count and footer sections
+- Product names as `h3`
+- JSON-LD `CollectionPage`, `ItemList`, and `Product` offers
+- Image file names such as `mens-cotton-jacket-3.png`, with descriptive alt text
 
-## Deploy on Vercel
+## Stack
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Next.js, React, and TypeScript. No UI kit and no CSS framework. Icons are inline SVG.
