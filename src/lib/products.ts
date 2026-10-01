@@ -1,7 +1,9 @@
+import savedCatalog from "@/data/products.json";
 import { productImageName, productSlug } from "@/lib/slug";
 import type { CatalogProduct, StoreProduct } from "@/lib/types";
 
 const PRODUCT_API = "https://fakestoreapi.com/products";
+const savedProducts = savedCatalog as StoreProduct[];
 
 function pick(options: string[], id: number, salt: number) {
   return options[(id * salt) % options.length];
@@ -143,12 +145,25 @@ function enrich(product: StoreProduct): CatalogProduct {
 }
 
 export async function getProducts(): Promise<CatalogProduct[]> {
-  const response = await fetch(PRODUCT_API, { cache: "no-store" });
-
-  if (!response.ok) {
-    throw new Error(`Product catalog request failed (${response.status})`);
+  // Netlify's servers cannot reach the product API, so the hosted site
+  // uses a saved copy of that same catalog.
+  if (process.env.NETLIFY === "true") {
+    return savedProducts.map(enrich);
   }
 
-  const products = (await response.json()) as StoreProduct[];
-  return products.map(enrich);
+  try {
+    const response = await fetch(PRODUCT_API, {
+      cache: "no-store",
+      signal: AbortSignal.timeout(8000),
+    });
+
+    if (!response.ok) {
+      throw new Error(`Product catalog request failed (${response.status})`);
+    }
+
+    const products = (await response.json()) as StoreProduct[];
+    return products.map(enrich);
+  } catch {
+    return savedProducts.map(enrich);
+  }
 }
