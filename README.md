@@ -1,6 +1,10 @@
 # Appscrip task — product listing page
 
-Responsive product listing page for the Appscrip frontend assignment. The page is server-rendered with Next.js, styled with handwritten CSS, and filled from the [Fake Store API](https://fakestoreapi.com/products).
+Responsive product listing page for the Appscrip frontend assignment. The page is server-rendered with Next.js, styled with CSS, and filled from the [Fake Store API](https://fakestoreapi.com/products).
+
+## Published Site
+
+<https://sage-pavlova-b8d333.netlify.app/>
 
 ## Run locally
 
@@ -9,16 +13,13 @@ npm install
 npm run dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000).
-
 ## What the page does
 
 - Shows the collection with the filter sidebar open on desktop, hidden on request, and as a full-screen panel on a phone.
 - Filters by ideal fit, occasion, work, fabric, segment, season, raw material, pattern, and customizable.
-- Sorts by recommended, newest, popular, and price.
+- Sorts by recommended, newest, popular.
 - Searches by product name and description.
 - Saves items to a wishlist for the current visit.
-- Adapts the grid for desktop (3 columns with filters, 4 without), tablet, and phone (2 columns).
 
 ## Server rendering
 
@@ -31,3 +32,7 @@ Open [http://localhost:3000](http://localhost:3000).
 - Product names as `h3`
 - JSON-LD `CollectionPage`, `ItemList`, and `Product` offers
 - Image file names such as `mens-cotton-jacket-3.png`, with descriptive alt text
+
+## Screenshot
+<img width="1919" height="978" alt="image" src="https://github.com/user-attachments/assets/18ca00ec-2ce2-4d28-847e-a1f7f0d41594" />
+
