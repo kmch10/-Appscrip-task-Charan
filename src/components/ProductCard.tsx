@@ -1,4 +1,3 @@
-import { formatPrice } from "@/lib/filters";
 import type { CatalogProduct } from "@/lib/types";
 import { HeartIcon } from "@/components/icons";
 import styles from "@/components/ProductCard.module.css";
@@ -46,7 +45,6 @@ export function ProductCard({
           <HeartIcon filled={wished} />
         </button>
       </div>
-      <p className={styles.price}>{formatPrice(product.price)}</p>
       <p className={styles.note}>
         <span>Sign in</span> or Create an account to see pricing
       </p>

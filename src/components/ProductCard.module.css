@@ -49,14 +49,8 @@
   color: #111;
 }
 
-.price {
-  margin: 6px 0 0;
-  font-size: 14px;
-  font-weight: 600;
-}
-
 .note {
-  margin: 4px 36px 0 0;
+  margin: 8px 36px 0 0;
   color: var(--muted);
   font-size: 13px;
   line-height: 1.45;
@@ -76,10 +70,6 @@
 
   .meta h3 {
     font-size: 13px;
-  }
-
-  .price {
-    display: none;
   }
 
   .note {

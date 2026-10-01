@@ -116,10 +116,3 @@ export function sortProducts(products: CatalogProduct[], sort: SortKey) {
       return sorted.sort((a, b) => a.id - b.id);
   }
 }
-
-export function formatPrice(price: number) {
-  return new Intl.NumberFormat("en-US", {
-    style: "currency",
-    currency: "USD",
-  }).format(price);
-}
